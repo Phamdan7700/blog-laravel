@@ -15,6 +15,12 @@ class CreateTypeOfNewsTable extends Migration
     {
         Schema::create('type_of_news', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->integer('order');
+            $table->boolean('status');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

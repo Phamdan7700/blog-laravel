@@ -22,7 +22,10 @@ class CategoriesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'slug' => $this->faker->slug,
+            'order' => $this->faker->numberBetween(0, 10),
+            'status' => $this->faker->boolean,
         ];
     }
 }

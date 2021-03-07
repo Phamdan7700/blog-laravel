@@ -22,7 +22,11 @@ class TypeOfNewsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name,
+            'slug' => $this->faker->slug,
+            'order' => $this->faker->randomDigit,
+            'status' => $this->faker->boolean,
+            'category_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

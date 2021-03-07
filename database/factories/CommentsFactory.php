@@ -22,7 +22,9 @@ class CommentsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'content' => $this->faker->text,
+            'user_id' => $this->faker->numberBetween(1, 10),
+            'news_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class TypeOfNews extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'slug',
+        'order',
+        'status',
+        'category_id',
+    ];
 }

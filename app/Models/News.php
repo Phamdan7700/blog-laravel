@@ -22,4 +22,21 @@ class News extends Model
         'user_id',
         'type_of_news_id',
     ];
+
+    protected function comments() {
+        return $this->hasMany(Comment::class);
+    }
+
+    protected function user() {
+        return $this->belongsTo(User::class);
+    }
+    protected function typeOfNews() {
+        return $this->belongsTo(TypeOfNews::class);
+    }
+
+    protected function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+
 }

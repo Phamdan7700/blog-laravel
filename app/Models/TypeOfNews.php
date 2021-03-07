@@ -16,4 +16,12 @@ class TypeOfNews extends Model
         'status',
         'category_id',
     ];
+
+    protected function Category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    protected function news() {
+        return $this->hasMany(News::class);
+    }
 }

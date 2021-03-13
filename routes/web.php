@@ -38,3 +38,7 @@ Route::get('/user/{id}', function ($id) {
 Route::get('/user/{id}/{name}', function ($id, $name) {
     //
 })->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+
+Route::get('admin/user', function() {
+
+})->middleware('checkAge');

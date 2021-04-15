@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\TypeNewsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,32 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/admin', function () {
-    return view('welcome');
-});
+// Route::resource('/', HomeController::class);
 
 Route::prefix('admin')->group(function () {
+    Route::resource('/', HomeController::class);
+    Route::resource('/categories', CategoryController::class);
+    Route::resource('/type-news', TypeNewsController::class);
+    Route::resource('/news', NewsController::class);
+
     Route::get('/users', function () {
-        return view('welcome');
+        // Matches The "/admin/users" URL
     });
 });
-
-Route::get('/user/{name}', function ($name) {
-    //
-})->where('name', '[A-Za-z]+');
-
-Route::get('/user/{id}', function ($id) {
-    //
-})->where('id', '[0-9]+');
-
-Route::get('/user/{id}/{name}', function ($id, $name) {
-    //
-})->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
-
-Route::get('admin/user', function() {
-
-})->middleware('checkAge');

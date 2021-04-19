@@ -20,6 +20,7 @@ class NewsController extends Controller
         ]);
         // $categories = News::all();
 
+
         
         // return view('admin.news', [
         //     'categories' => $categories
